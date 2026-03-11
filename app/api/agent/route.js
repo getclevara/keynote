@@ -37,7 +37,7 @@ export async function POST(request) {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-5-20250929",
+        model: "claude-sonnet-4-5-20250514",
         max_tokens: 400,
         stream: true,
         system: AGENTS[agent],
