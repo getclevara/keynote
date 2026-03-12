@@ -264,13 +264,14 @@ export default function Home() {
         background: `radial-gradient(ellipse 80% 50% at 50% -10%,rgba(0,212,255,0.07),transparent),radial-gradient(ellipse 50% 40% at 85% 100%,rgba(255,68,102,0.05),transparent),radial-gradient(ellipse 50% 30% at 5% 90%,rgba(0,255,136,0.05),transparent)` }} />
 
       {/* TOP BAR */}
-      <div style={{ position: "relative", zIndex: 2, flexShrink: 0, padding: launched ? "6px 20px 4px" : "16px 20px 6px" }}>
-        <div style={{ textAlign: "center", marginBottom: launched ? 3 : 8 }}>
+      <div style={{ position: "relative", zIndex: 2, flexShrink: 0, padding: launched ? "6px 20px 4px" : "24px 20px 6px" }}>
+        <div style={{ textAlign: "center", marginBottom: launched ? 3 : 6 }}>
           {!launched && <div style={{ fontSize: 10, letterSpacing: 7, color: "rgba(255,255,255,0.12)", textTransform: "uppercase", marginBottom: 3 }}>Hawaii Island AI Summit 2026</div>}
           <h1 style={{ fontSize: launched ? F.titleSmall : F.title, fontWeight: 300, margin: 0, transition: "font-size 0.4s",
             background: "linear-gradient(135deg,#00d4ff,#00ff88,#ffaa00,#ff4466)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             {viewPhase === 2 && launched ? "Phase 2 — From Strategy to Launch" : "7 AI Agents. 1 Business Idea. 2 Minutes."}
           </h1>
+          {!launched && <p style={{ fontSize: 14, color: "rgba(255,255,255,0.18)", marginTop: 4, fontFamily: "'Instrument Serif','Georgia',serif", fontStyle: "italic" }}>Give me any business idea. Watch what happens.</p>}
         </div>
 
         {/* Input + buttons row */}
@@ -370,28 +371,28 @@ export default function Home() {
             </div>
           )
         ) : (
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ fontSize: 11, letterSpacing: 5, color: "rgba(255,255,255,0.08)", textTransform: "uppercase", marginBottom: 10 }}>Phase 1 — Strategy</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14, maxWidth: 680, width: "100%", marginBottom: 20 }}>
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: "4vh" }}>
+            <div style={{ fontSize: 11, letterSpacing: 5, color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: 14 }}>Phase 1 — Strategy</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14, maxWidth: 720, width: "100%", marginBottom: 28 }}>
               {PHASE1.map(a => (
-                <div key={a.id} style={{ padding: "20px 10px 16px", borderRadius: 10, border: "1px solid rgba(255,255,255,0.03)", background: "rgba(255,255,255,0.008)", textAlign: "center" }}>
-                  <div style={{ fontSize: 32, marginBottom: 4 }}>{a.icon}</div>
-                  <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: a.color, opacity: 0.4, fontWeight: 700 }}>{a.label}</div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.08)", fontStyle: "italic", marginTop: 2 }}>{a.role}</div>
+                <div key={a.id} style={{ padding: "22px 12px 18px", borderRadius: 12, border: `1px solid ${a.color}15`, background: `${a.color}08`, textAlign: "center" }}>
+                  <div style={{ fontSize: 36, marginBottom: 6 }}>{a.icon}</div>
+                  <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: a.color, opacity: 0.7, fontWeight: 700 }}>{a.label}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.25)", fontStyle: "italic", marginTop: 4 }}>{a.role}</div>
                 </div>
               ))}
             </div>
-            <div style={{ fontSize: 11, letterSpacing: 5, color: "rgba(255,255,255,0.08)", textTransform: "uppercase", marginBottom: 10 }}>Phase 2 — Execution</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, maxWidth: 520, width: "100%", marginBottom: 16 }}>
+            <div style={{ fontSize: 11, letterSpacing: 5, color: "rgba(255,255,255,0.25)", textTransform: "uppercase", marginBottom: 14 }}>Phase 2 — Execution</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, maxWidth: 540, width: "100%", marginBottom: 24 }}>
               {PHASE2.map(a => (
-                <div key={a.id} style={{ padding: "20px 10px 16px", borderRadius: 10, border: "1px solid rgba(255,255,255,0.03)", background: "rgba(255,255,255,0.008)", textAlign: "center" }}>
-                  <div style={{ fontSize: 32, marginBottom: 4 }}>{a.icon}</div>
-                  <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: a.color, opacity: 0.4, fontWeight: 700 }}>{a.label}</div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.08)", fontStyle: "italic", marginTop: 2 }}>{a.role}</div>
+                <div key={a.id} style={{ padding: "22px 12px 18px", borderRadius: 12, border: `1px solid ${a.color}15`, background: `${a.color}08`, textAlign: "center" }}>
+                  <div style={{ fontSize: 36, marginBottom: 6 }}>{a.icon}</div>
+                  <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: a.color, opacity: 0.7, fontWeight: 700 }}>{a.label}</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.25)", fontStyle: "italic", marginTop: 4 }}>{a.role}</div>
                 </div>
               ))}
             </div>
-            <div style={{ fontSize: 14, fontFamily: "'Instrument Serif','Georgia',serif", fontStyle: "italic", color: "rgba(255,255,255,0.07)" }}>7 agents ready to deploy...</div>
+            <div style={{ fontSize: 15, fontFamily: "'Instrument Serif','Georgia',serif", fontStyle: "italic", color: "rgba(255,255,255,0.2)" }}>7 agents ready to deploy...</div>
           </div>
         )}
       </div>
